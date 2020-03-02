@@ -19,6 +19,7 @@ module.exports = {
     sourceType: 'module', // Allows for the use of imports
     jsx: true,
     useJSXTextNode: true,
+    project: './tsconfig.json',
   },
   env: {
     browser: true,
@@ -39,5 +40,9 @@ module.exports = {
         directory: './tsconfig.json',
       },
     },
+  },
+  rules: {
+    'react/display-name': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
   },
 }
