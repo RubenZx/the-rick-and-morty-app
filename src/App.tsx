@@ -5,7 +5,9 @@ import {
   ThemeProvider as MuiThemeProvider,
 } from '@material-ui/core/styles'
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
+import Router from './routes'
 import theme from './theme'
 
 const App = () => {
@@ -16,7 +18,7 @@ const App = () => {
         <StylesProvider injectFirst>
           <MuiThemeProvider theme={theme}>
             <ThemeProvider theme={theme}>
-              <h1>Hello Rick and Morty world!</h1>
+              <BrowserRouter><Router/></BrowserRouter>
             </ThemeProvider>
           </MuiThemeProvider>
         </StylesProvider>
