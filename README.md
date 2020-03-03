@@ -1,6 +1,11 @@
 # The Rick and Morty app
 React app to consume the [Rick and Morty Api](https://rickandmortyapi.com/).
 
+## Run with
+```sh
+yarn start
+```
+
 ## Built with
 ### [React](https://reactjs.org/)
 A JavaScript library for building user interfaces. Declarative and component based.
