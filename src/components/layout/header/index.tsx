@@ -25,7 +25,7 @@ const SearchBar = styled.div`
   }
 `
 
-export default () => (
+const Header = () => (
   <AppBar position="static">
     <Toolbar>
       <Grid container>
@@ -43,3 +43,5 @@ export default () => (
     </Toolbar>
   </AppBar>
 )
+
+export default Header
