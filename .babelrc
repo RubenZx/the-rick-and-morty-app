@@ -10,6 +10,7 @@
           "~Assets": "./src/assets",
           "~Utils": "./src/utils",
           "~Screens": "./src/screens",
+          "~Theme": "./src/theme",
           "~Api": "./src/services/api"
         }
       }
