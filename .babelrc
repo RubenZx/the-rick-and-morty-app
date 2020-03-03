@@ -9,7 +9,8 @@
           "~Components": "./src/components",
           "~Assets": "./src/assets",
           "~Utils": "./src/utils",
-          "~Screens": "./src/screens"
+          "~Screens": "./src/screens",
+          "~Api": "./src/services/api"
         }
       }
     ]

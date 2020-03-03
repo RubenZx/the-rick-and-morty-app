@@ -6,7 +6,8 @@
       "~Components/*": ["components/*"],
       "~Assets/*": ["assets/*"],
       "~Utils/*": ["utils/*"],
-      "~Screens/*": ["screens/*"]
+      "~Screens/*": ["screens/*"],
+      "~Api": ["services/api"]
     }
   }
 }
