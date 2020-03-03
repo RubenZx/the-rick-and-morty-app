@@ -35,14 +35,17 @@ module.exports = {
       typescript: {
         alwaysTryTypes: true, // always try to resolve types under `<roo/>@types` directory even it doesn't contain any source code, like `@types/unist`
       },
-
       typescript: {
         directory: './tsconfig.json',
+      },
+      node: {
+        extensions: ['.js', '.ts', '.tsx', '.jsx'],
       },
     },
   },
   rules: {
     'react/display-name': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    'import/prefer-default-export': 'off',
   },
 }
