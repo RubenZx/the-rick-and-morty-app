@@ -3,12 +3,12 @@
     // baseUrl is optional for plugin, but some IDEs require it
     "baseUrl": "./src",
     "paths": {
-      "~Components/*": ["components/*"],
+      "~Api": ["services/api"],
       "~Assets/*": ["assets/*"],
-      "~Utils/*": ["utils/*"],
+      "~Components/*": ["components/*"],
       "~Screens/*": ["screens/*"],
       "~Theme": ["theme"],
-      "~Api": ["services/api"]
+      "~Utils/*": ["utils/*"]
     }
   }
 }

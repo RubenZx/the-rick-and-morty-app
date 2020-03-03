@@ -6,12 +6,12 @@
       {
         "root": ".",
         "alias": {
-          "~Components": "./src/components",
+          "~Api": "./src/services/api",
           "~Assets": "./src/assets",
-          "~Utils": "./src/utils",
+          "~Components": "./src/components",
           "~Screens": "./src/screens",
           "~Theme": "./src/theme",
-          "~Api": "./src/services/api"
+          "~Utils": "./src/utils"
         }
       }
     ]
