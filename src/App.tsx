@@ -7,6 +7,7 @@ import {
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
+import Layout from '~Components/layout'
 import Router from './routes'
 import theme from './theme'
 
@@ -18,7 +19,11 @@ const App = () => {
         <StylesProvider injectFirst>
           <MuiThemeProvider theme={theme}>
             <ThemeProvider theme={theme}>
-              <BrowserRouter><Router/></BrowserRouter>
+              <BrowserRouter>
+                <Layout>
+                  <Router />
+                </Layout>
+              </BrowserRouter>
             </ThemeProvider>
           </MuiThemeProvider>
         </StylesProvider>
