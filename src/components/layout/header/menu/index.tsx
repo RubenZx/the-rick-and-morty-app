@@ -7,16 +7,20 @@ import Section from '~Components/layout/header/menu/Section'
 import routes from '~Routes/routes'
 
 const StyledAppBar = styled(AppBar)`
-  background-color: #2e4052;
+  background-color: ${({ theme }) => theme.palette.secondary.main};
+`
+
+const StyledToolbar = styled(Toolbar)`
+  flex-grow: 1;
 `
 
 const Menu = () => {
   const location = useLocation()
   return (
     <StyledAppBar position="static">
-      <Toolbar>
-        <Grid container>
-          <Grid item xs={2}>
+      <StyledToolbar>
+        <Grid container spacing={4}>
+          <Grid item>
             <Section
               href={routes.baseUrl}
               path={location.pathname}
@@ -24,8 +28,8 @@ const Menu = () => {
               variant="h5"
             />
           </Grid>
-          <Grid item xs={1} />
-          <Grid item xs={1}>
+          <Grid item xs={4} />
+          <Grid item xs>
             <Section
               href={routes.characters}
               path={location.pathname}
@@ -33,7 +37,7 @@ const Menu = () => {
               variant="h6"
             />
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs>
             <Section
               href={routes.episodes}
               path={location.pathname}
@@ -41,7 +45,7 @@ const Menu = () => {
               variant="h6"
             />
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs>
             <Section
               href={routes.locations}
               path={location.pathname}
@@ -49,12 +53,11 @@ const Menu = () => {
               variant="h6"
             />
           </Grid>
-          <Grid item xs={4} />
           <Grid item xs={2}>
             <Search />
           </Grid>
         </Grid>
-      </Toolbar>
+      </StyledToolbar>
     </StyledAppBar>
   )
 }
