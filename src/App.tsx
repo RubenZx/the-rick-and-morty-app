@@ -17,7 +17,9 @@ const App = () => {
       <CssBaseline />
       <NoSsr>
         <StylesProvider injectFirst>
+          {/* To override the current theme */}
           <MuiThemeProvider theme={theme}>
+            {/* Allow share the theme with styled components */}
             <ThemeProvider theme={theme}>
               <BrowserRouter>
                 <Layout>
