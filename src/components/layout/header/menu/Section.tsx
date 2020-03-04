@@ -15,8 +15,11 @@ const StyledLink = styled(Link)<StyledLinkProps>`
   &:visited,
   &:link,
   &:active {
-    // TODO: change color if focus
     text-decoration: none;
+  }
+
+  &:hover {
+    color: #ff9800;
   }
 
   // TODO add theme colors
@@ -24,13 +27,13 @@ const StyledLink = styled(Link)<StyledLinkProps>`
 `
 
 const Section = (props: any) => {
-  const { href, path, variant } = props
+  const { href, path, text, variant } = props
 
   return (
     <>
       <Typography variant={variant}>
         <StyledLink href={href} path={path}>
-          The Rick and Morty App
+          {text}
         </StyledLink>
       </Typography>
     </>
