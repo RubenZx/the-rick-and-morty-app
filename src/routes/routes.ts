@@ -20,7 +20,7 @@ const routes: RoutesType = {
   baseUrl: {
     component: Home,
     name: 'Home',
-    path: '/'
+    path: '/',
   },
   characters: {
     component: Characters,
