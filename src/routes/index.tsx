@@ -5,10 +5,9 @@ import routes from './routes'
 const DynamicRoutes = () => {
   return (
     <>
-      {Object.entries(routes).map(([key, value]) => {
-        const { component, path } = value
-        return <Route exact path={path} key={path} component={component} />
-      })}
+      {Object.values(routes).map(({ component, path }) => (
+        <Route exact path={path} key={path} component={component} />
+      ))}
     </>
   )
 }

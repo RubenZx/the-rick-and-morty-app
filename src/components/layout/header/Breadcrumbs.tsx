@@ -1,10 +1,10 @@
-import React from 'react'
 import {
   Breadcrumbs as MaterialUiBreadcrumbs,
-  Typography
+  Typography,
 } from '@material-ui/core'
+import React from 'react'
 import { Link as RouterLink, Route } from 'react-router-dom'
-import routes from '~Routes/routes'
+import routes, { RouteType } from '~Routes/routes'
 
 const Breadcrumbs = () => {
   return (
@@ -20,13 +20,17 @@ const Breadcrumbs = () => {
               const last = index === pathNames.length - 1
               const to = `/${pathNames.slice(0, index + 1).join('/')}`
 
+              const { name } = Object.values(routes).filter(
+                (route: RouteType) => route.path.substring(1) === value
+              )[0]
+
               return last ? (
                 <Typography color="textPrimary" key={to}>
-                  {value}
+                  {name}
                 </Typography>
               ) : (
                 <RouterLink color="inherit" to={to} key={to}>
-                  {value}
+                  {name}
                 </RouterLink>
               )
             })}
