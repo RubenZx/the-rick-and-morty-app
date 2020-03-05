@@ -27,14 +27,12 @@ const Breadcrumbs = () => {
             </Link>
             {pathNames.map((value, index) => {
               const last = index === pathNames.length - 1
-              const to = `/${pathNames.slice(0, index + 1).join('/')}`
-
               const { name, path } = Object.values(routes).filter(
-                (route: RouteType) => route.path.substring(1) === value
+                (route: RouteType) => route.path === `/${value}`
               )[0]
 
               return last ? (
-                <Typography color="textPrimary" key={to}>
+                <Typography color="textPrimary" key={path}>
                   {name}
                 </Typography>
               ) : (
