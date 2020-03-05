@@ -17,7 +17,7 @@ const Logo = () => {
 
   return (
     <IconButton>
-      <Link component={RouterLink} to={routes.baseUrl}>
+      <Link component={RouterLink} to={routes.baseUrl.path}>
         {isRick ? <RickIcon /> : <MortyIcon />}
       </Link>
     </IconButton>

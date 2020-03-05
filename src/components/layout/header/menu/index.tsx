@@ -27,7 +27,7 @@ const Menu = () => {
           <Grid item xs={6} />
           <Grid item xs>
             <Section
-              to={routes.characters}
+              to={routes.characters.path}
               path={location.pathname}
               text="Characters"
               variant="h6"
@@ -35,7 +35,7 @@ const Menu = () => {
           </Grid>
           <Grid item xs>
             <Section
-              to={routes.episodes}
+              to={routes.episodes.path}
               path={location.pathname}
               text="Episodes"
               variant="h6"
@@ -43,7 +43,7 @@ const Menu = () => {
           </Grid>
           <Grid item xs>
             <Section
-              to={routes.locations}
+              to={routes.locations.path}
               path={location.pathname}
               text="Locations"
               variant="h6"

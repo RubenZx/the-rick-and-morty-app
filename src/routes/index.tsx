@@ -1,20 +1,23 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
-import Characters from '~Screens/Characters'
-import Episodes from '~Screens/Episodes'
-import Home from '~Screens/Home'
-import Locations from '~Screens/Locations'
 import routes from './routes'
+
+const DynamicRoutes = () => {
+  return (
+    <>
+      {Object.values(routes).map(({ component, path }) => (
+        <Route exact path={path} key={path} component={component} />
+      ))}
+    </>
+  )
+}
 
 const Router = () => {
   return (
     <Switch>
-      <Route exact path={routes.baseUrl} component={Home} />
-      <Route exact path={routes.characters} component={Characters} />
-      <Route exact path={routes.episodes} component={Episodes} />
-      <Route exact path={routes.locations} component={Locations} />
+      <DynamicRoutes />
       <Route path="*">
-        <Redirect to={routes.baseUrl} />
+        <Redirect to={routes.baseUrl.path} />
       </Route>
     </Switch>
   )

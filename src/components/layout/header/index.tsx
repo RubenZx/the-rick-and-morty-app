@@ -1,12 +1,12 @@
 import React from 'react'
-import Breadcrumb from './Breadcrumb'
+import Breadcrumbs from './Breadcrumbs'
 import Menu from './menu'
 
 const Header = () => {
   return (
     <>
       <Menu />
-      <Breadcrumb />
+      <Breadcrumbs />
     </>
   )
 }
