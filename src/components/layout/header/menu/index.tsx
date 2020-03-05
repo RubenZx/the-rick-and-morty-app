@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import Search from '~Components/layout/header/menu/Search'
 import Section from '~Components/layout/header/menu/Section'
+import Logo from '~Components/Logo'
 import routes from '~Routes/routes'
 
 const StyledAppBar = styled(AppBar)`
@@ -19,19 +20,14 @@ const Menu = () => {
   return (
     <StyledAppBar position="static">
       <StyledToolbar>
-        <Grid container spacing={4}>
+        <Grid container direction="row" justify="center" alignItems="center">
           <Grid item>
-            <Section
-              href={routes.baseUrl}
-              path={location.pathname}
-              text="The Rick and Morty App"
-              variant="h5"
-            />
+            <Logo />
           </Grid>
-          <Grid item xs={4} />
+          <Grid item xs={6} />
           <Grid item xs>
             <Section
-              href={routes.characters}
+              to={routes.characters}
               path={location.pathname}
               text="Characters"
               variant="h6"
@@ -39,7 +35,7 @@ const Menu = () => {
           </Grid>
           <Grid item xs>
             <Section
-              href={routes.episodes}
+              to={routes.episodes}
               path={location.pathname}
               text="Episodes"
               variant="h6"
@@ -47,7 +43,7 @@ const Menu = () => {
           </Grid>
           <Grid item xs>
             <Section
-              href={routes.locations}
+              to={routes.locations}
               path={location.pathname}
               text="Locations"
               variant="h6"

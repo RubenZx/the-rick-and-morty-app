@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-  Switch,
-  Redirect,
-  Route
-} from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import Characters from '~Screens/Characters'
 import Episodes from '~Screens/Episodes'
 import Home from '~Screens/Home'
@@ -17,7 +13,7 @@ const Router = () => {
       <Route exact path={routes.characters} component={Characters} />
       <Route exact path={routes.episodes} component={Episodes} />
       <Route exact path={routes.locations} component={Locations} />
-      <Route path='*'>
+      <Route path="*">
         <Redirect to={routes.baseUrl} />
       </Route>
     </Switch>

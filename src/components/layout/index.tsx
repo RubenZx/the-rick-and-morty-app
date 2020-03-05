@@ -5,6 +5,7 @@ import Header from './header'
 interface LayoutProps {
   children: React.ReactNode
 }
+
 const Layout = ({ children }: LayoutProps) => (
   <>
     <Header />
