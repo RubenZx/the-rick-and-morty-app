@@ -2,10 +2,10 @@ import { AppBar, Grid, Toolbar } from '@material-ui/core'
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import Search from '~Components/layout/header/menu/Search'
-import Section from '~Components/layout/header/menu/Section'
 import Logo from '~Components/Logo'
 import routes from '~Routes/routes'
+import Search from './Search'
+import Section from './Section'
 
 const StyledAppBar = styled(AppBar)`
   background-color: ${({ theme }) => theme.palette.secondary.main};
