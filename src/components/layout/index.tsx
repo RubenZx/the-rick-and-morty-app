@@ -1,44 +1,32 @@
+import { Grid } from '@material-ui/core'
 import React from 'react'
 import styled from 'styled-components'
+import Sidebar from '~Components/layout/Sidebar'
 import Breadcrumbs from './Breadcrumbs'
 import Footer from './footer'
 import Menu from './menu'
-import Sidebar from '~Components/layout/Sidebar'
 
 interface LayoutProps {
   children: React.ReactNode
 }
 
-const StyledBreadcrumb = styled.div`
+const GridBreadcrumb = styled(Grid)`
   background-color: ${({ theme }) => theme.palette.primary.light};
-  display: flex;
   padding: 10px 15px 5px 15px;
 `
 
-const StyledContent = styled.div`
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: row;
+const Container = styled(Grid)`
+  background-color: ${({ theme }) => theme.palette.primary.light};
+  flex: 1;
 `
 
-const StyledChildren = styled.div`
-  background-color: ${({ theme }) => theme.palette.primary.light};
-  display: flex;
-  flex: 8 0 auto;
+const ChildrenContainer = styled(Grid)`
+  flex: 1;
   padding: 5px 15px 5px 15px;
 `
 
-const StyledSidebar = styled.div`
+const StyledFooter = styled(Grid)`
   background-color: ${({ theme }) => theme.palette.secondary.main};
-  display: flex;
-  flex: 2;
-  padding: 5px 15px 50px 15px;
-`
-
-const StyledFooter = styled.div`
-  background-color: ${({ theme }) => theme.palette.secondary.main};
-  display: flex;
-  flex-shrink: 0;
   min-height: 100px;
   padding: 5px 15px 5px 15px;
 `
@@ -47,20 +35,26 @@ const Layout = ({ children }: LayoutProps) => (
   <>
     <Menu />
 
-    <StyledBreadcrumb>
-      <Breadcrumbs />
-    </StyledBreadcrumb>
+    <Container container direction="column">
+      <GridBreadcrumb container>
+        <Breadcrumbs />
+      </GridBreadcrumb>
 
-    <StyledContent>
-      <StyledChildren>{children}</StyledChildren>
-      <StyledSidebar>
-        <Sidebar />
-      </StyledSidebar>
-    </StyledContent>
+      <ChildrenContainer container>
+        <Grid item xs={7}>
+          {children}
+        </Grid>
+        <Grid item xs={1} />
+        <Grid item xs={3}>
+          <Sidebar />
+        </Grid>
+        <Grid item xs={1} />
+      </ChildrenContainer>
 
-    <StyledFooter>
-      <Footer />
-    </StyledFooter>
+      <StyledFooter container>
+        <Footer />
+      </StyledFooter>
+    </Container>
   </>
 )
 
