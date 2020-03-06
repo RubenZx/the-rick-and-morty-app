@@ -2,8 +2,8 @@ import { Grid } from '@material-ui/core'
 import React, { useState } from 'react'
 import { ReactComponent as Title } from '~Assets/img/characters_title.svg'
 import useDebounce from '~Hooks/useDebounce'
-import CharacterComparator from './components/CharacterComparator'
-import LazyCharacterList from './components/LazyCharacterList'
+import Comparator from './components/Comparator'
+import LazyList from './components/LazyList'
 import SearchBar from './components/SearchBar'
 
 const Characters = () => {
@@ -21,10 +21,10 @@ const Characters = () => {
         <SearchBar element={searchValue} handleChange={handleSearch} />
       </Grid>
       <Grid item xs={12}>
-        <CharacterComparator />
+        <Comparator />
       </Grid>
       <Grid item xs={12}>
-        <LazyCharacterList characterToSearch={debouncedSearchValue} />
+        <LazyList characterToSearch={debouncedSearchValue} />
       </Grid>
     </Grid>
   )
