@@ -1,13 +1,16 @@
 import { Grid } from '@material-ui/core'
 import React, { useState } from 'react'
 import { ReactComponent as Title } from '~Assets/img/characters_title.svg'
+import useDebounce from '~Hooks/useDebounce'
 import CharacterComparator from './components/CharacterComparator'
 import LazyCharacterList from './components/LazyCharacterList'
 import SearchBar from './components/SearchBar'
 
 const Characters = () => {
-  const [search, setSearch] = useState()
-  const handleSearch = (value: string) => setSearch(value)
+  const [searchValue, setsearchValue] = useState()
+  const debouncedSearchValue = useDebounce(searchValue, 500)
+
+  const handleSearch = (value: string) => setsearchValue(value)
 
   return (
     <Grid container>
@@ -15,13 +18,13 @@ const Characters = () => {
         <Title />
       </Grid>
       <Grid item xs={12}>
-        <SearchBar element="search" handleChange={handleSearch} />
+        <SearchBar element={searchValue} handleChange={handleSearch} />
       </Grid>
       <Grid item xs={12}>
         <CharacterComparator />
       </Grid>
       <Grid item xs={12}>
-        <LazyCharacterList />
+        <LazyCharacterList characterToSearch={debouncedSearchValue} />
       </Grid>
     </Grid>
   )
