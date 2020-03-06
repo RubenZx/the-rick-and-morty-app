@@ -6,6 +6,7 @@
       "~Api": ["services/api"],
       "~Assets/*": ["assets/*"],
       "~Components/*": ["components/*"],
+      "~Hooks/*": ["hooks/*"],
       "~Routes*": ["routes/*", "routes"],
       "~Screens/*": ["screens/*"],
       "~Theme": ["theme"],
