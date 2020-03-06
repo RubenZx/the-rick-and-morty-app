@@ -7,10 +7,9 @@ import LazyList from './components/LazyList'
 import SearchBar from './components/SearchBar'
 
 const Characters = () => {
-  const [searchValue, setsearchValue] = useState()
+  const [searchValue, setSearchValue] = useState()
   const debouncedSearchValue = useDebounce(searchValue, 500)
-
-  const handleSearch = (value: string) => setsearchValue(value)
+  const handleSearch = (value: string) => setSearchValue(value)
 
   return (
     <Grid container>
