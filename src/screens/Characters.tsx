@@ -1,9 +1,8 @@
 import React from 'react'
+import { ReactComponent as Title } from '~Assets/img/characters_title.svg'
 
 const Characters = () => {
-    return (
-        <h1>Characters</h1>
-    )
+  return <Title />
 }
 
 export default Characters
