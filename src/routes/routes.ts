@@ -1,4 +1,4 @@
-import Characters from '~Screens/Characters'
+import Characters from '~Screens/characters'
 import Episodes from '~Screens/Episodes'
 import Home from '~Screens/Home'
 import Locations from '~Screens/Locations'
