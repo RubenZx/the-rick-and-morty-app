@@ -28,7 +28,7 @@ module.exports = {
       version: 'detect',
     },
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
+      '@typescript-eslint/parser': ['.ts', '.tsx', '.d.ts'],
     },
     'import/resolver': {
       typescript: {
@@ -36,7 +36,7 @@ module.exports = {
         directory: './tsconfig.json',
       },
       node: {
-        extensions: ['.js', '.ts', '.tsx', '.jsx'],
+        extensions: ['.js', '.ts', '.tsx', '.jsx', '.d.ts'],
       },
     },
   },
