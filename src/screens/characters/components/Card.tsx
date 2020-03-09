@@ -3,7 +3,7 @@ import {
   Card as MaterialUiCard,
   CardContent,
   CardMedia,
-  GridListTileBar
+  GridListTileBar,
 } from '@material-ui/core'
 import styled from 'styled-components'
 import { Character } from '../../../services/api/types'
@@ -40,15 +40,11 @@ const Card = ({
         <GridListTileBar title={name} />
       </StyledCardMedia>
       <StyledCardContent>
-        <CardContentItem textAlign="start" title="STATUS" value={status} />
-        <CardContentItem textAlign="start" title="SPICES" value={species} />
-        <CardContentItem textAlign="start" title="GENDER" value={gender} />
-        <CardContentItem textAlign="start" title="ORIGIN" value={origin.name} />
-        <CardContentItem
-          textAlign="start"
-          title="LAST LOCATION"
-          value={location.name}
-        />
+        <CardContentItem title="STATUS" value={status} />
+        <CardContentItem title="SPICES" value={species} />
+        <CardContentItem title="GENDER" value={gender} />
+        <CardContentItem title="ORIGIN" value={origin.name} />
+        <CardContentItem title="LAST LOCATION" value={location.name} />
       </StyledCardContent>
     </StyledCard>
   )

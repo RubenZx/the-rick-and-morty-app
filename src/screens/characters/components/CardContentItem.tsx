@@ -3,12 +3,11 @@ import styled from 'styled-components'
 import { Typography } from '@material-ui/core'
 
 interface CardContentItemProps {
-  textAlign: 'end' | 'start'
   title: string
   value: string
 }
 
-const CardContentItem = ({ textAlign, title, value }: CardContentItemProps) => {
+const CardContentItem = ({ title, value }: CardContentItemProps) => {
   const Container = styled.div`
     margin-bottom: 4px;
   `
@@ -27,7 +26,7 @@ const CardContentItem = ({ textAlign, title, value }: CardContentItemProps) => {
   `
 
   return (
-    <Container style={{ textAlign }}>
+    <Container>
       <StyledTitleTypography>{title}</StyledTitleTypography>
       <StyledDescriptionTypography>{value}</StyledDescriptionTypography>
     </Container>
