@@ -10,9 +10,8 @@ export interface RouteType extends RouteProps {
 }
 
 const createRoutes = <T extends object>(
-  item: Record<keyof T, RouteType>,
+  item: Record<keyof T, RouteType>
 ): Record<keyof T, RouteType> => item
-
 
 const routes = createRoutes({
   baseUrl: {
