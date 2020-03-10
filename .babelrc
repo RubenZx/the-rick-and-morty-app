@@ -12,6 +12,7 @@
           "~Hooks": "./src/hooks",
           "~Routes": "./src/routes",
           "~Screens": "./src/screens",
+          "~Store": "./src/store",
           "~Theme": "./src/theme",
           "~Utils": "./src/utils"
         }
