@@ -41,11 +41,12 @@ const Layout = ({ children }: LayoutProps) => (
       </GridBreadcrumb>
 
       <ChildrenContainer container>
+        <Grid item xs={1} />
         <Grid item xs={7}>
           {children}
         </Grid>
         <Grid item xs={1} />
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           <Sidebar />
         </Grid>
         <Grid item xs={1} />
