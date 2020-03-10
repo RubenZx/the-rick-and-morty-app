@@ -1,15 +1,27 @@
 import { Grid } from '@material-ui/core'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { ReactComponent as Title } from '~Assets/img/characters_title.svg'
 import useDebounce from '~Hooks/useDebounce'
 import Comparator from './components/Comparator'
 import LazyList from './components/LazyList'
 import SearchBar from './components/SearchBar'
+import {fetchCharacters} from '~Store/actions/characters'
 
 const Characters = () => {
+  const dispatch = useDispatch()
+
   const [searchValue, setSearchValue] = useState()
   const debouncedSearchValue = useDebounce(searchValue, 500)
   const handleSearch = (value: string) => setSearchValue(value)
+
+  useEffect(() => {
+    dispatch(fetchCharacters(debouncedSearchValue))
+    // dispatch({
+    //   type: 'CHARACTERS_FETCH_REQUESTED',
+    //   payload: { name: debouncedSearchValue },
+    // })
+  }, [debouncedSearchValue, dispatch])
 
   return (
     <Grid container>
@@ -23,7 +35,7 @@ const Characters = () => {
         <Comparator />
       </Grid>
       <Grid item xs={12}>
-        <LazyList characterToSearch={debouncedSearchValue} />
+        <LazyList />
       </Grid>
     </Grid>
   )
