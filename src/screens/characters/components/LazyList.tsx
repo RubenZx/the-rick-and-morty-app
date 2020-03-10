@@ -680,10 +680,6 @@ const LazyList = ({ characterToSearch }: LazyCharacterListProps) => {
     "created":"2017-11-04T22:34:53.659Z"
   }
   ]
-  characters.push(characterData1)
-  characters.push(characterData2)
-  characters.push(characterData183)
-  characters.push(characterData361)
 
   const Container = styled.div`
     margin-bottom: 50px;

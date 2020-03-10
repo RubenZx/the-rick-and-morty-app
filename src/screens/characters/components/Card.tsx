@@ -3,11 +3,13 @@ import {
   Card as MaterialUiCard,
   CardContent,
   CardMedia,
-  GridListTileBar,
 } from '@material-ui/core'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 import styled from 'styled-components'
 import { Character } from '../../../services/api/types'
 import CardContentItem from '~Screens/characters/components/CardContentItem'
+import UnknownIcon from '~Assets/img/unknown.jpeg'
 
 interface CardProps {
   character: Character
@@ -36,9 +38,15 @@ const Card = ({
 
   return (
     <StyledCard>
-      <StyledCardMedia style={{ height: 200, width: 200 }} image={image}>
-        <GridListTileBar title={name} />
-      </StyledCardMedia>
+      <LazyLoadImage
+        alt={name}
+        effect="blur"
+        height={200}
+        placeholderSrc={UnknownIcon}
+        src={image}
+        threshold={500}
+        width={200}
+      />
       <StyledCardContent>
         <CardContentItem title="STATUS" value={status} />
         <CardContentItem title="SPICES" value={species} />
